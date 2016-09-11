@@ -22,4 +22,14 @@ public class Poisson implements Distribution {
 		return sum;
 	}
 
+	@Override
+	public double mean() {
+		return lambda;
+	}
+
+	@Override
+	public double variance() {
+		return lambda;
+	}
+
 }

@@ -24,4 +24,14 @@ public class Binomial implements Distribution {
 		return sum;
 	}
 
+	@Override
+	public double mean() {
+		return n*pi;
+	}
+
+	@Override
+	public double variance() {
+		return n*pi*(1-pi);
+	}
+
 }

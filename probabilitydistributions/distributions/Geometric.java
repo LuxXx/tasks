@@ -23,4 +23,14 @@ public class Geometric implements Distribution {
 		return sum;
 	}
 
+	@Override
+	public double mean() {
+		return 1/pi;
+	}
+
+	@Override
+	public double variance() {
+		return (1-pi)/(pi*pi);
+	}
+
 }

@@ -29,4 +29,14 @@ public class NegativeBinomial implements Distribution {
 		return sum;
 	}
 
+	@Override
+	public double mean() {
+		return r/pi;
+	}
+
+	@Override
+	public double variance() {
+		return r*(1-pi)/(pi*pi);
+	}
+
 }

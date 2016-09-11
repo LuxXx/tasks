@@ -31,4 +31,14 @@ public class Hypergeometric implements Distribution {
 		return sum;
 	}
 
+	@Override
+	public double mean() {
+		return n*M/N;
+	}
+
+	@Override
+	public double variance() {
+		return n*(M/N)*(1-(M/N))*((N-n)/(N-1));
+	}
+
 }

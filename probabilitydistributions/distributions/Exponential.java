@@ -19,4 +19,14 @@ public class Exponential implements Distribution {
 		return 1-Math.exp(-lambda*x);
 	}
 
+	@Override
+	public double mean() {
+		return 1/lambda;
+	}
+
+	@Override
+	public double variance() {
+		return 1/(lambda*lambda);
+	}
+
 }
