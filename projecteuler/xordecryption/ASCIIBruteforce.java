@@ -77,6 +77,16 @@ public class ASCIIBruteforce {
 		return new char[] {a,b,c};
 	}
 	
-	
-	
+	/**
+	 * as in the exercise asked
+	 * @return the sum of the ascii letters of the decrpyted message
+	 */
+	private long count() {
+		long l = 0;
+		String decryptedMsg = decrypt("god");
+		for (int i = 0; i < decryptedMsg.length(); i++) {
+			l += decryptedMsg.charAt(i);
+		}
+		return l;
+	}
 }
