@@ -89,7 +89,7 @@ public class SplitEncryption extends JFrame {
 			Files.write(new File(f.getAbsolutePath() + ".crypt1").toPath(), key, StandardOpenOption.CREATE);
 			Files.write(new File(f.getAbsolutePath() + ".crypt2").toPath(), baFile, StandardOpenOption.CREATE);
 			
-			JOptionPane.showMessageDialog(this, f.getName() + " decrypted to " + f.getName() + ".key and " + f.getName() + ".crypt");
+			JOptionPane.showMessageDialog(this, f.getName() + " decrypted to " + f.getName() + ".crpyt1 and " + f.getName() + ".crypt2");
 			
 		} catch (IOException e) {
 			e.printStackTrace();
