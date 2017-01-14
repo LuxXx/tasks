@@ -108,7 +108,7 @@ public class SplitEncryption extends JFrame {
 			for (int i = 0; i < af2.length; i++) {
 				af1[i] = (byte) (af1[i] ^ af2[i]);
 			}
-			Files.write(new File(f.getAbsolutePath().substring(0,f.getAbsolutePath().length() - 6)+ ".decrypt").toPath(), af1, StandardOpenOption.CREATE);
+			Files.write(new File(f.getAbsolutePath().substring(0,f.getAbsolutePath().length() - 6)+ "decrypt").toPath(), af1, StandardOpenOption.CREATE);
 			JOptionPane.showMessageDialog(this, "File decrypted");
 
 			
