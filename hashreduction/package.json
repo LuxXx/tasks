@@ -1,0 +1,21 @@
+{
+  "name": "hashreduction",
+  "version": "1.0.0",
+  "description": "Takes a hash and outputs a deterministic word",
+  "main": "reduction.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luxdav",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuxXx"
+  },
+  "keywords": [
+    "hash",
+    "reduction",
+    "rainbow",
+    "table"
+  ]
+}
