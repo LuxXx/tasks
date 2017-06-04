@@ -12,16 +12,20 @@ function Partition(a, b, N) {
     let z = len / this.N;
     return this.a + n * z;
   }
-  // integrates over f using the riemann sum with N subintervals
-  this.integrate = function (f) {
+  // integrates over f using the riemann sum with N subintervals with g as a norm
+  this.integrate = function (f, g) {
+
+    if (g === undefined)
+      g = x => x;
+
     let sum = 0;
     for (let i = 1; i < this.N; i++) {
-      sum += f(this.x(i)) * (this.x(i) - this.x(i - 1));
+      sum += f(this.x(i)) * g((this.x(i)) - g(this.x(i - 1)));
     }
     return sum;
   }
 }
 
 // Example
-let a = new Partition(0, 40, 100000).integrate(x => x*x);
+let a = new Partition(0, 40, 100000).integrate(x => x*x, x => x);
 console.log(a);
