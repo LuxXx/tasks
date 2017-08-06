@@ -17,19 +17,21 @@
         ctx.stroke();
       }
 
-      drawLine(0, 0, canvas.width, 0);
-
       function walk(deviation, trend, color) {
-        var values = [0];
+        var values = [{x: canvas.width / 2, y: 0}];
 
-        for (var i = 0; i < canvas.width; i++) {
-          values.push(values[values.length - 1] + X(deviation, trend));
+        for (var i = 0; i < 300; i++) {
+          var pre = values[values.length - 1];
+          values.push({
+            x: pre.x + X(deviation, trend),
+            y: pre.y + X(deviation, trend)
+          });
         }
 
         for (var i = 1; i < values.length; i++) {
           var t = ctx.strokeStyle;
           ctx.strokeStyle = color;
-          drawLine(i-1, values[i-1], i, values[i])
+          drawLine(values[i].x, values[i].y, values[i-1].x, values[i-1].y)
           ctx.strokeStyle = t;
         }
       }
@@ -40,11 +42,7 @@
         return Math.random() < 0.5 ? range * trend : -range;
       }
 
-      walk(4, 1.2, '#FF0000');
-      walk(6, 1, '#FFFF00');
-      walk(8, 1, '#0000FF');
-      walk(10, 1, '#00AA00');
-      walk(12, 1, '#000000');
+      walk(20, 1, '#FF0000');
 
       ctx.font = "12px Arial";
       ctx.fillText("Black Scholes Group - LuxXx", 10, 10);
